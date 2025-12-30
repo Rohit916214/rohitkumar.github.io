@@ -783,6 +783,28 @@
       color: #e5e7eb;
     }
 
+
+    /* Profile Image style */
+    .about-profile-img {
+      width: 130px;
+      height: 130px;
+      border-radius: 50%;
+      object-fit: cover;
+      display: block;
+      margin-bottom: 1rem;
+      border: 2px solid rgba(99, 102, 241, 0.6);
+      box-shadow: 0 6px 18px rgba(99, 102, 241, 0.35);
+    }
+
+        @media (max-width: 600px) {
+      .about-profile-img {
+        width: 120px;
+        height: 120px;
+      }
+    }
+
+
+
     /* Responsive */
     @media (max-width: 900px) {
       .hero-grid,
@@ -805,6 +827,8 @@
         grid-template-columns: repeat(2, minmax(0, 1fr));
       }
     }
+
+    
 
     @media (max-width: 720px) {
       .hero {
@@ -998,7 +1022,7 @@
 
               <!-- Profile Image -->
               <img 
-                src=""
+                src="Rohit Profile Photo.jpg"
                 alt="Rohit Kumar AI ML Developer"
                 class="about-profile-img"
               />
