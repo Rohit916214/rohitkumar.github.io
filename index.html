@@ -785,39 +785,42 @@
 
 
     /* Profile Image style */
-   /* Replace the existing .about-profile-img block with this */
-    .about-profile-img {
-      width: 150px;                     /* bada circle on desktop */
-      height: 150px;
-      border-radius: 50%;
-      object-fit: cover;
-      object-position: center;          /* center the face/subject */
-      display: block;
-      margin-bottom: 1rem;
-      border: 3px solid rgba(99, 102, 241, 0.85); /* stronger colored border */
-      background-color: rgba(10, 12, 20, 0.6);   /* subtle bg if image has transparent areas */
-      box-shadow: 0 10px 30px rgba(99, 102, 241, 0.35), 0 4px 12px rgba(0,0,0,0.45);
-      transition: transform 0.18s ease, box-shadow 0.18s ease;
-      -webkit-backface-visibility: hidden;
-      backface-visibility: hidden;
-    }
-    
-    /* Slight hover lift (optional) for better emphasis on pointer devices */
-    .about-profile-img:hover {
-      transform: translateY(-4px) scale(1.02);
-      box-shadow: 0 18px 44px rgba(99, 102, 241, 0.32), 0 6px 18px rgba(0,0,0,0.5);
-    }
-    
-    /* Mobile: thoda chhota lekin phir bhi bada aur clear */
-    @media (max-width: 600px) {
-      .about-profile-img {
-        width: 140px;
-        height: 140px;
-        border: 3px solid rgba(99, 102, 241, 0.75);
-        box-shadow: 0 8px 26px rgba(99, 102, 241, 0.28), 0 3px 10px rgba(0,0,0,0.45);
-      }
-    }
+   .about-profile-wrap {
+    width: 160px;
+    height: 160px;
+    border-radius: 50%;
+    overflow: hidden;
+    display: block;
+    margin-bottom: 1rem;
+    border: 4px solid rgba(99, 102, 241, 0.65); /* purple border */
+    box-shadow: 0 10px 30px rgba(2,6,23,0.6), 0 6px 18px rgba(99,102,241,0.22);
+    background: linear-gradient(135deg, rgba(99,102,241,0.03), rgba(34,197,94,0.02));
+  }
 
+  .about-profile-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* ensures image fills the circle and is cropped appropriately */
+    object-position: center;
+    display: block;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+  }
+
+  /* Responsive adjustments */
+  @media (max-width: 900px) {
+    .about-profile-wrap {
+      width: 140px;
+      height: 140px;
+    }
+  }
+
+  @media (max-width: 600px) {
+    .about-profile-wrap {
+      width: 120px;
+      height: 120px;
+    }
+  }
 
     /* Responsive */
     @media (max-width: 900px) {
@@ -1035,12 +1038,14 @@
             <div class="about-card">
 
               <!-- Profile Image -->
-               <img 
-                src="./Rohit-Profile-Photo.jpg"
-                alt="Rohit Kumar AI ML Developer"
-                class="about-profile-img"
-                onerror="this.onerror=null; this.src='https://raw.githubusercontent.com/Rohit916214/rohitkumar.github.io/ffba7632cd3f8501a1b6b99dafbebc561dbda077/rohit-profile-photo.jpg';"
-              />
+              <div class="about-profile-wrap" aria-hidden="false">
+                <img
+                  src="./Rohit-Profile-Photo.jpg"
+                  alt="Rohit Kumar AI ML Developer"
+                  class="about-profile-img"
+                  onerror="this.onerror=null; this.src='https://raw.githubusercontent.com/Rohit916214/rohitkumar.github.io/ffba7632cd3f8501a1b6b99dafbebc561dbda077/rohit-profile-photo.jpg';"
+                />
+              </div>
 
               <p>
                 I am Rohit Kumar, a final year Computer Science & Engineering student at
