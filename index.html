@@ -785,24 +785,38 @@
 
 
     /* Profile Image style */
+   /* Replace the existing .about-profile-img block with this */
     .about-profile-img {
-      width: 130px;
-      height: 130px;
+      width: 150px;                     /* bada circle on desktop */
+      height: 150px;
       border-radius: 50%;
       object-fit: cover;
+      object-position: center;          /* center the face/subject */
       display: block;
       margin-bottom: 1rem;
-      border: 2px solid rgba(99, 102, 241, 0.6);
-      box-shadow: 0 6px 18px rgba(99, 102, 241, 0.35);
+      border: 3px solid rgba(99, 102, 241, 0.85); /* stronger colored border */
+      background-color: rgba(10, 12, 20, 0.6);   /* subtle bg if image has transparent areas */
+      box-shadow: 0 10px 30px rgba(99, 102, 241, 0.35), 0 4px 12px rgba(0,0,0,0.45);
+      transition: transform 0.18s ease, box-shadow 0.18s ease;
+      -webkit-backface-visibility: hidden;
+      backface-visibility: hidden;
     }
-
-        @media (max-width: 600px) {
+    
+    /* Slight hover lift (optional) for better emphasis on pointer devices */
+    .about-profile-img:hover {
+      transform: translateY(-4px) scale(1.02);
+      box-shadow: 0 18px 44px rgba(99, 102, 241, 0.32), 0 6px 18px rgba(0,0,0,0.5);
+    }
+    
+    /* Mobile: thoda chhota lekin phir bhi bada aur clear */
+    @media (max-width: 600px) {
       .about-profile-img {
-        width: 120px;
-        height: 120px;
+        width: 140px;
+        height: 140px;
+        border: 3px solid rgba(99, 102, 241, 0.75);
+        box-shadow: 0 8px 26px rgba(99, 102, 241, 0.28), 0 3px 10px rgba(0,0,0,0.45);
       }
     }
-
 
 
     /* Responsive */
